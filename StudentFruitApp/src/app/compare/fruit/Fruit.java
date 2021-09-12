@@ -6,8 +6,20 @@ public class Fruit {
 	private int no;
 	private String name;
 	private int price;
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return no+"-"+name+" (" + price + ")";
+	}
 	public int getNo() {
 		return no;
+	}
+	public Fruit(int no, String name, int price)
+	{
+		super();
+		this.no = no;
+		this.name = name;
+		this.price = price;
 	}
 	public void setNo(int no) {
 		this.no = no;
@@ -24,7 +36,7 @@ public class Fruit {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	class FruitComparator implements Comparator<Fruit>{
+	static class FruitComparator implements Comparator<Fruit>{
 
 		@Override
 		public int compare(Fruit o1, Fruit o2) {
@@ -32,7 +44,7 @@ public class Fruit {
 			return o1.name.compareTo(o2.name);
 		}
 	}
-	class FruitComparatorDesc implements Comparator<Fruit>{
+	static class FruitComparatorDesc implements Comparator<Fruit>{
 
 		@Override
 		public int compare(Fruit o1, Fruit o2) {
